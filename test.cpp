@@ -6,6 +6,7 @@
 #include <iostream>
 
 using namespace std;
+using namespace Game;
 
 //The screen sttributes
 const int SCREEN_WIDTH = 640;
