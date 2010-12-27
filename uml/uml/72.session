@@ -1,0 +1,19 @@
+window_sizes 1458 942 364 1088 758 112
+diagrams
+  active  classdiagram_ref 128072 // prog
+    1088 758 100 4 0 0
+end
+show_stereotypes
+selected classview_ref 128072 // prog3
+open
+  class_ref 128328 // GameEngine
+  attribute_ref 128328 // img
+  attribute_ref 128456 // x
+  attribute_ref 128584 // y
+  operation_ref 129736 // Sprite
+  operation_ref 129480 // tick
+  attribute_ref 128200 // img
+  operation_ref 128200 // ~Image
+  attribute_ref 128072 // refcount
+end
+end

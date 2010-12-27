@@ -1,0 +1,36 @@
+format 74
+
+classcanvas 128072 class_ref 128072 // Image
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition yes show_members_visibility yes show_members_stereotype yes show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 456 52 2000
+end
+classcanvas 128200 class_ref 128200 // SDL_Surface
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition yes show_members_visibility yes show_members_stereotype yes show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 752 53 2000
+end
+classcanvas 128328 class_ref 128328 // GameEngine
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition yes show_members_visibility yes show_members_stereotype yes show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 2 53 2000
+end
+classcanvas 128456 class_ref 128456 // Sprite
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition yes show_members_visibility yes show_members_stereotype yes show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 207 52 2000
+end
+relationcanvas 128712 relation_ref 128072 // <association>
+  decenter_begin 177
+  decenter_end 235
+  from ref 128072 z 2001 to ref 128200
+  no_role_a no_role_b
+  multiplicity_a_pos 735 69 3000 multiplicity_b_pos 692 83 3000
+end
+relationcanvas 128840 relation_ref 128200 // <association>
+  from ref 128072 z 2001 to ref 128456
+  no_role_a no_role_b
+  multiplicity_a_pos 415 158 3000 multiplicity_b_pos 439 152 3000
+end
+relationcanvas 129096 relation_ref 128456 // <association>
+  from ref 128328 z 2001 to ref 128456
+  no_role_a no_role_b
+  multiplicity_a_pos 192 138 3000 multiplicity_b_pos 156 114 3000
+end
+end
