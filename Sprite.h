@@ -1,23 +1,29 @@
-#ifndef GAMEENGINE_H
-#define GAMEENGINE_H
+#ifndef SPRITE_H
+#define SPRITE_H
+
+#include "Image.h"
 
 namespace Game {
-	class Sprite{
+    class Sprite{
 
-		public:
-			Sprite();
-			~Sprite();
+	public:
+	    Sprite();
+	    Sprite( std::string path );
+	    ~Sprite();
 
-		private:
-			Sprite(const Sprite& other);
-			const Sprite& operator=(const Sprite& other);
+	    const Image& getImage() const;
 
-			int x;
-			int y;
-			int xVel;
-			int yVel;
+	private:
+	    Sprite(const Sprite& source);
+	    const Sprite& operator=(const Sprite& source);
 
-			Image img;
-	}
+	    int x;
+	    int y;
+	    int xVel;
+	    int yVel;
+
+	    Image img;
+    };
 }
+
 #endif
