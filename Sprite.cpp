@@ -6,9 +6,9 @@
 
 using namespace std;
 
-namespace Game {
+namespace GameEng {
     Sprite::Sprite(){}
-    Sprite::Sprite( std::string path ) : img(path), x(0), y(0), xVel(0), yVel(0){}
+    Sprite::Sprite( std::string path, int xx, int yy ) : img(path), x(xx), y(yy), xVel(0), yVel(0){}
     Sprite::~Sprite(){}
 
     const Image& Sprite::getImage() const {

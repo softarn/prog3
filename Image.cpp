@@ -2,7 +2,7 @@
 #include <iostream>
 
 using namespace std;
-namespace Game{
+namespace GameEng {
     Image::Image(){}
 
     Image::Image(std::string path){

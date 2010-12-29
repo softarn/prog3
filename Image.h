@@ -4,7 +4,7 @@
 #include <string>
 #include "SDL/SDL.h"
 #include "SDL/SDL_image.h"
-namespace Game{
+namespace GameEng {
     class Image{
 
 	public:
