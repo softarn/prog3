@@ -1,6 +1,6 @@
 format 74
 "uml"
-  revision 2
+  revision 3
   modified_by 72 "softarn"
 
 
@@ -82,6 +82,10 @@ format 74
 	    classrelation_ref 128840 // <association>
 	  b role_name "" multiplicity "1" private
 	    classrelation_ref 128968 // <association>
+      end
+
+      classrelation 142408 // <association>
+	relation_ref 141640 // <association>
       end
     end
 
@@ -409,6 +413,21 @@ ${inlines}
       idl_decl ""
       explicit_switch_type ""
       
+      classrelation 142024 // <association>
+	relation 141512 ----
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 142024 // <association>
+	  b role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 142152 // <association>
+      end
+
+      classrelation 142152 // <association>
+	relation_ref 141512 // <association>
+      end
     end
 
     class 135112 "Globals"
@@ -423,6 +442,31 @@ ${inlines}
       idl_decl ""
       explicit_switch_type ""
       
+    end
+
+    class 141640 "test.cpp"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 142280 // <association>
+	relation 141640 ----
+	  a role_name "" multiplicity "1" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 142280 // <association>
+	  b role_name "" multiplicity "1" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 142408 // <association>
+      end
     end
   end
 end
