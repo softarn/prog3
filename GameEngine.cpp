@@ -9,7 +9,10 @@ namespace Game{
 	GameEngine::GameEngine(int sw, int sh, int sbpp, int sfps, std::string stitle) :
 		screen_w(sw), screen_h(sh), screen_bpp(sbpp),fps(sfps), title(stitle) {}
 
-	GameEngine::~GameEngine(){}
+	GameEngine::~GameEngine(){
+		for(unsigned int i=0; i < comps.size(); i++)
+			delete comps[i];	
+	}
 
 	int GameEngine::run(){
 		bool quit = false;
