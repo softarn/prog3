@@ -10,9 +10,9 @@ namespace Game{
 	~Globals();
 	SDL_Surface* screen;
 
-	int SCREEN_HEIGHT;
-	int SCREEN_WIDTH;
-	int SCREEN_BPP;
+	static const int SCREEN_HEIGHT = 480;
+	static const int SCREEN_WIDTH = 640;
+	static const int SCREEN_BPP = 32;
     };
 
     extern Globals sys;

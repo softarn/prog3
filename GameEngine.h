@@ -14,8 +14,6 @@ namespace Game {
 			GameEngine(const GameEngine& other);
 			const GameEngine& operator=(const GameEngine& other);
 
-			bool init();
-
 			int screen_w;
 			int screen_h;
 			int screen_bpp;
