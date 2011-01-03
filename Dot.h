@@ -1,9 +1,9 @@
 #ifndef DOT_H
 #define DOT_H
-
+#include "SDL/SDL.h"
 #include "Sprite.h"
 
-using namespace GameEng;
+using namespace Game;
 
 namespace Game {
     class Dot : public Sprite{

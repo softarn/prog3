@@ -4,13 +4,14 @@
 #include "Image.h"
 #include <string>
 
-namespace GameEng {
+namespace Game {
     class Sprite{
 
 	public:
 	    Sprite();
 	    Sprite(std::string path, int xx, int yy);
 	    ~Sprite();
+    	    virtual void handle_input(SDL_Event& event) = 0;
 
 	    virtual void draw() const = 0;
 	    virtual void tick() = 0;

@@ -1,15 +1,16 @@
 #ifndef GAMEENGINE_H
 #define GAMEENGINE_H
 
+#include "Sprite.h"
+#include <vector>
+#include "SDL/SDL.h"
 namespace Game {
 	class GameEngine {
-
 		public:
-			GameEngine(int sw, int sh, int sbpp, int sfps, std::string stitle);
+			GameEngine();
 			~GameEngine();
+			void add(Sprite* spr);
 			int run();
-			void add(int* spr);
-
 		private:
 			GameEngine(const GameEngine& other);
 			const GameEngine& operator=(const GameEngine& other);
@@ -18,14 +19,14 @@ namespace Game {
 			int screen_h;
 			int screen_bpp;
 			int fps;
+			static const int FRAMES_PER_SECOND = 80;
 
 			SDL_Surface *screen;
 
 			std::string title;
 
-			std::vector<int*> comps;
+			std::vector<Sprite*> comps;
 			Uint32 bgColor;
-
-	}
+	};
 }
 #endif
