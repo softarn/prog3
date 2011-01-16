@@ -6,7 +6,7 @@ using namespace std;
 
 namespace Game{
     Dot::Dot(int x, int y) : SpriteInput("dot.bmp", x, y), FRICTION(0.9999f),
-	GRAVITY(0.1f), DOT_WIDTH(20), DOT_HEIGHT(20), DOT_ACC_X(5), DOT_ACC_Y(5){}
+	GRAVITY(0.2f){}
 
     void Dot::draw() const{
 
@@ -21,6 +21,23 @@ namespace Game{
 
     void Dot::tick(){
 	
+	//Get the keystates
+	Uint8 *keystates = SDL_GetKeyState( NULL );
+
+	//If left is pressed
+	if( keystates[ SDLK_LEFT ] && xVel > -200 )
+	{
+	    if(xVel > -DOT_ACC_X_MAX)
+		xVel -= DOT_ACC_X;
+	}
+
+	//If right is pressed
+	if( keystates[ SDLK_RIGHT ] && xVel < 200)
+	{
+	    if(xVel < DOT_ACC_X_MAX)
+		xVel += DOT_ACC_X;
+	}
+
 	gravity();
 	friction();
 	
@@ -86,20 +103,6 @@ namespace Game{
 	    }
 	}
 
-	//Get the keystates
-	Uint8 *keystates = SDL_GetKeyState( NULL );
-
-	//If left is pressed
-	if( keystates[ SDLK_LEFT ] && xVel > -200 )
-	{
-	    xVel -= DOT_ACC_X;
-	}
-
-	//If right is pressed
-	if( keystates[ SDLK_RIGHT ] && xVel < 200)
-	{
-	    xVel += DOT_ACC_X;
-	}
     }
 
     void Dot::gravity()

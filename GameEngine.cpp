@@ -7,9 +7,6 @@
 #include "Globals.h"
 namespace GameEng {
 
-	GameEngine::GameEngine(){
-	}
-
 	GameEngine::~GameEngine(){
 		for(unsigned int i=0; i < comps.size(); i++)
 			delete comps[i];

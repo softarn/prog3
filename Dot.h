@@ -25,11 +25,14 @@ namespace Game {
 	    void friction();
 
 	private:
-	    int DOT_WIDTH;
-	    int DOT_HEIGHT;
+	    static const int DOT_WIDTH = 20;
+	    static const int DOT_HEIGHT = 20;
 
-	    int DOT_ACC_X;
-	    int DOT_ACC_Y;
+	    static const float DOT_ACC_X = 0.4f;
+	    static const float DOT_ACC_Y = 5;
+
+	    static const int DOT_ACC_X_MAX = 6;
+	    static const int DOT_ACC_Y_MAX = 7;
 
 	    float GRAVITY;
 	    float FRICTION;

@@ -4,10 +4,12 @@
 #include "Sprite.h"
 #include <vector>
 #include "SDL/SDL.h"
+
 namespace GameEng {
+
     class GameEngine {
 	public:
-	    GameEngine();
+	    GameEngine(int fps = 90) : FRAMES_PER_SECOND(fps){};
 	    ~GameEngine();
 	    void add(Sprite* spr);
 	    int run();
@@ -19,7 +21,7 @@ namespace GameEng {
 	    int screen_h;
 	    int screen_bpp;
 	    int fps;
-	    static const int FRAMES_PER_SECOND = 80;
+	    int FRAMES_PER_SECOND;
 
 	    SDL_Surface *screen;
 
@@ -28,5 +30,7 @@ namespace GameEng {
 	    std::vector<Sprite*> comps;
 	    Uint32 bgColor;
     };
+
 }
+
 #endif
