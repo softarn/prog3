@@ -7,13 +7,7 @@
 using namespace std;
 
 namespace GameEng {
-    Sprite::Sprite(){}
     Sprite::Sprite( std::string path, int xx, int yy ) : img(path), x(xx), y(yy), xVel(0), yVel(0){}
-    Sprite::~Sprite(){}
-
-    void Sprite::handle_input(SDL_Event& event)
-    {
-	}
 
     const Image& Sprite::getImage() const {
 	return img;

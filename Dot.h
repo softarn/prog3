@@ -1,12 +1,12 @@
 #ifndef DOT_H
 #define DOT_H
 #include "SDL/SDL.h"
-#include "Sprite.h"
+#include "SpriteInput.h"
 
 using namespace GameEng;
 
 namespace Game {
-    class Dot : public Sprite{
+    class Dot : public SpriteInput{
 	public:
 	    //Initializes the variables
 	    Dot(int x, int y);

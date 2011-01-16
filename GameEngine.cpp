@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include "Timer.h"
+#include "SpriteInput.h"
 #include "GameEngine.h"
 #include "Globals.h"
 namespace GameEng {
@@ -11,7 +12,7 @@ namespace GameEng {
 
 	GameEngine::~GameEngine(){
 		for(unsigned int i=0; i < comps.size(); i++)
-			delete comps[i];	
+			delete comps[i];
 	}
 
 	int GameEngine::run(){
@@ -31,7 +32,9 @@ namespace GameEng {
 				}
 
 				for(unsigned int i=0; i < comps.size(); i++) {
-					comps[i]->handle_input(event);
+				    SpriteInput *si = dynamic_cast<SpriteInput*>(comps[i]);
+				    if(si)
+					si->handle_input(event);
 				}
 			}
 

@@ -8,11 +8,6 @@ namespace GameEng {
     class Sprite{
 
 	public:
-	    Sprite();
-	    Sprite(std::string path, int xx, int yy);
-	    ~Sprite();
-    	    virtual void handle_input(SDL_Event& event) = 0;
-
 	    virtual void draw() const = 0;
 	    virtual void tick() = 0;
 	    const Image& getImage() const;
@@ -23,8 +18,7 @@ namespace GameEng {
 	    float yVel;
 
 	protected:
-	    Sprite( std::string path );
-	    
+	    Sprite(std::string path, int xx, int yy);
 
 	private:
 	    Sprite(const Sprite& source);

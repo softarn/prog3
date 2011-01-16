@@ -5,7 +5,7 @@
 using namespace std;
 
 namespace Game{
-    Dot::Dot(int x, int y) : Sprite("dot.bmp", x, y), FRICTION(0.9999f),
+    Dot::Dot(int x, int y) : SpriteInput("dot.bmp", x, y), FRICTION(0.9999f),
 	GRAVITY(0.1f), DOT_WIDTH(20), DOT_HEIGHT(20), DOT_ACC_X(5), DOT_ACC_Y(5){}
 
     void Dot::draw() const{
