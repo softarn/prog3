@@ -1,7 +1,7 @@
 #include "SDL/SDL.h"
 #include "Globals.h"
 
-namespace Game{
+namespace GameEng {
     
     Globals sys;
 

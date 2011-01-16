@@ -4,7 +4,7 @@
 #include "Image.h"
 #include <string>
 
-namespace Game {
+namespace GameEng {
     class Sprite{
 
 	public:

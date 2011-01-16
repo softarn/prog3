@@ -3,7 +3,7 @@
 
 #include "SDL/SDL.h"
 
-namespace Game{
+namespace GameEng {
 
     struct Globals{
 	Globals();

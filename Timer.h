@@ -2,7 +2,7 @@
 #define TIMER_H
 
 //The timer
-namespace Game{
+namespace GameEng {
 class Timer
 {
 	private:

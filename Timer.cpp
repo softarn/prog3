@@ -1,6 +1,6 @@
 #include "Timer.h"
 #include "SDL/SDL.h"
-namespace Game{
+namespace GameEng {
 Timer::Timer()
 {
 	//Initialize the variables

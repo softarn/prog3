@@ -3,6 +3,7 @@
 #include "Dot.h"
 
 //using namespace std;
+using namespace GameEng;
 using namespace Game;
 
 //The frame rate
@@ -13,14 +14,14 @@ SDL_Event event;
 
 int main( int argc, char* args[] )
 {
-	GameEngine ge;
+    GameEngine ge;
 
-	//The dot that will be used
-	Dot *myDot = new Dot(100, 200);
+    //The dot that will be used
+    Dot *myDot = new Dot(100, 200);
 
-	ge.add(myDot);
-	ge.run();
+    ge.add(myDot);
+    ge.run();
 
-	//Clean up
-	return 0;
+    //Clean up
+    return 0;
 }

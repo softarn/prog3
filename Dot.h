@@ -3,7 +3,7 @@
 #include "SDL/SDL.h"
 #include "Sprite.h"
 
-using namespace Game;
+using namespace GameEng;
 
 namespace Game {
     class Dot : public Sprite{

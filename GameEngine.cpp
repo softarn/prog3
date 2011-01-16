@@ -4,7 +4,7 @@
 #include "Timer.h"
 #include "GameEngine.h"
 #include "Globals.h"
-namespace Game{
+namespace GameEng {
 
 	GameEngine::GameEngine(){
 	}
