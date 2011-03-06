@@ -2,11 +2,10 @@
 #include "Globals.h"
 #include "Square.h"
 
-//Mycket ifrån lazyfoo, needar fix!
 
 namespace Game{
-    Dot::Dot(int x, int y) : SpriteInput("dot.bmp", x, y), FRICTION(0.9999f),
-    GRAVITY(0.2f){}
+    Dot::Dot(int x, int y, SDLKey l, SDLKey r) : SpriteInput("dot.bmp", x, y), FRICTION(0.9999f),
+    GRAVITY(0.2f), leftKey(l), rightKey(r){}
 
     void Dot::draw() const{
 
@@ -30,14 +29,14 @@ namespace Game{
 	Uint8 *keystates = SDL_GetKeyState( NULL );
 
 	//If left is pressed
-	if( keystates[ SDLK_LEFT ] && xVel > -200 )
+	if( keystates[ leftKey ] && xVel > -200 )
 	{
 	    if(xVel > -DOT_ACC_X_MAX)
 		xVel -= DOT_ACC_X;
 	}
 
 	//If right is pressed
-	if( keystates[ SDLK_RIGHT ] && xVel < 200)
+	if( keystates[ rightKey ] && xVel < 200)
 	{
 	    if(xVel < DOT_ACC_X_MAX)
 		xVel += DOT_ACC_X;
@@ -81,16 +80,16 @@ namespace Game{
 	}
 	//Make sure the dot is not outside the screen
 	//or bottom
+	
 	else if( dotBottom > sys.SCREEN_HEIGHT ){
-	    y = sys.SCREEN_HEIGHT - DOT_HEIGHT;
-	    if(yVel > 0)
-		yVel = -(yVel - 4);
+	    y = sys.SCREEN_HEIGHT + 100;
+	    yVel = 0;
 	}
     }
 
     void Dot::handle_input(SDL_Event& event)
     {
-	//If a key was pressed
+/*	//If a key was pressed
 	if( event.type == SDL_KEYDOWN )
 	{
 	    //Adjust the velocity
@@ -111,7 +110,7 @@ namespace Game{
 		    } break;
 	    }
 	}
-
+*/
     }
 
     void Dot::gravity()
@@ -159,6 +158,7 @@ namespace Game{
 		    if(yVel > -8){
 			yVel = -8;
 		    }
+		    square->randomizePos();
 		}
 	    }
 	}

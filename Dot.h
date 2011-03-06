@@ -9,15 +9,14 @@ namespace Game {
     class Dot : public SpriteInput{
 	public:
 	    //Initializes the variables
-	    Dot(int x, int y);
+	    Dot(int x, int y, SDLKey l, SDLKey r);
 
-	    //Takes key presses and adjusts the dot's velocity
+	    //Not used
 	    void handle_input(SDL_Event& event);
 
 	    //Moves the dot
 	    void tick();
 
-	    //Shows the dot on the screen
 	    void draw() const;
 	    
 	    void gravity();
@@ -40,6 +39,8 @@ namespace Game {
 
 	    float GRAVITY;
 	    float FRICTION;
+
+	    SDLKey leftKey, rightKey;
     };
 }
 #endif

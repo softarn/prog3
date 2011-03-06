@@ -18,6 +18,8 @@ namespace Game{
 
 	    void tick(){};
 
+	    void randomizePos();
+
 	private:
 	    int w;
 	    int h;
