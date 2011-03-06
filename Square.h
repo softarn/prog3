@@ -1,23 +1,26 @@
 #ifndef SQUARE_H
 #define SQUARE_H
-#include "SDL/SDL.h"
 
-namespace GameEng {
-    class Square {
+#include "SDL/SDL.h"
+#include "Sprite.h"
+
+using namespace GameEng;
+
+namespace Game{
+    class Square : public Sprite {
 	public:
+	    void draw() const;
+
+	    void tick(){};
+
 	    //Initializes the variables
 	    Square(int x, int y, int w, int h);
 
-	    //Shows the squre on the screen
-	    void draw() const;
-
 	private:
-	    int x;
-	    int y;
 	    int w;
 	    int h;
 
-	    SDL_Rect rect;
+	    SDL_Rect* rect;
     };
 }
 #endif

@@ -4,8 +4,6 @@
 #include "SDL/SDL.h"
 #include "SDL/SDL_image.h"
 
-using namespace std;
-
 namespace GameEng {
     Sprite::Sprite( std::string path, int xx, int yy ) : img(path), x(xx), y(yy), xVel(0), yVel(0){}
 

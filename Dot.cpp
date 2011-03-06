@@ -2,7 +2,7 @@
 #include "Globals.h"
 #include <iostream>
 
-using namespace std;
+//Mycket ifrån lazyfoo!
 
 namespace Game{
     Dot::Dot(int x, int y) : SpriteInput("dot.bmp", x, y), FRICTION(0.9999f),
