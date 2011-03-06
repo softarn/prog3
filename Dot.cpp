@@ -76,7 +76,7 @@ namespace Game{
 		y = sys.SCREEN_HEIGHT - DOT_HEIGHT;
 
 		if(yVel > 0)
-			yVel = -(yVel - 3);
+			yVel = -(yVel - 4);
 	}
     }
     
@@ -98,7 +98,8 @@ namespace Game{
 			    direction = 1;
 			else
 			    direction = -1;
-			yVel += DOT_ACC_Y * direction;
+			yVel = DOT_ACC_Y * direction;
+
 		    } break;
 	    }
 	}

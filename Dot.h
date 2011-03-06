@@ -29,10 +29,10 @@ namespace Game {
 	    static const int DOT_HEIGHT = 20;
 
 	    static const float DOT_ACC_X = 0.4f;
-	    static const float DOT_ACC_Y = 5;
+	    static const float DOT_ACC_Y = 10;
 
 	    static const int DOT_ACC_X_MAX = 6;
-	    static const int DOT_ACC_Y_MAX = 7;
+	    static const int DOT_ACC_Y_MAX = 10;
 
 	    float GRAVITY;
 	    float FRICTION;
