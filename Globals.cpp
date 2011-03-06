@@ -5,7 +5,7 @@ namespace GameEng {
     
     Globals sys;
 
-    Globals::Globals(){
+    Globals::Globals() : run(true), endingMessage("Good bye!"){
 	
 	if (SDL_Init(SDL_INIT_EVERYTHING) != -1){
 		screen = SDL_SetVideoMode( SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_BPP, SDL_SWSURFACE );

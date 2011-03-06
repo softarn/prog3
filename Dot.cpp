@@ -82,8 +82,7 @@ namespace Game{
 	//or bottom
 	
 	else if( dotBottom > sys.SCREEN_HEIGHT ){
-	    y = sys.SCREEN_HEIGHT + 100;
-	    yVel = 0;
+	    sys.run = false;
 	}
     }
 

@@ -13,6 +13,7 @@ namespace GameEng {
 	    ~GameEngine();
 	    void add(Sprite* spr);
 	    int run();
+
 	private:
 	    GameEngine(const GameEngine& other);
 	    const GameEngine& operator=(const GameEngine& other);

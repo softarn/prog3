@@ -1,6 +1,7 @@
 #include "SDL/SDL.h"
 #include <string>
 #include <vector>
+#include <iostream>
 #include "Timer.h"
 #include "SpriteInput.h"
 #include "GameEngine.h"
@@ -14,24 +15,18 @@ namespace GameEng {
     }
 
     int GameEngine::run(){
-	bool quit = false;
-
 	Timer timer;
 
 	timer.start();
-	while( quit == false ){
+	while( sys.run ){
 	    SDL_Event event;
 
-	    //Restart delta timer
 	    timer.start();
 
-	    //While there's events to handle
 	    while( SDL_PollEvent( &event ) ) {
-		//If the user has Xed out the window
-		if( event.type == SDL_QUIT ) {
-		    //Quit the program
-		    quit = true;
-		}
+
+		if( event.type == SDL_QUIT )
+		    sys.run = false;
 
 		for(unsigned int i=0; i < comps.size(); i++) {
 		    SpriteInput *si = dynamic_cast<SpriteInput*>(comps[i]);
@@ -64,6 +59,7 @@ namespace GameEng {
 		SDL_Delay( ( 1000 / FRAMES_PER_SECOND ) - timer.get_ticks());
 	    }
 	}
+	std::cout << sys.endingMessage << std::endl;
     }
 
     void GameEngine::add(Sprite* spr){
