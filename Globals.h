@@ -10,8 +10,8 @@ namespace GameEng {
 	~Globals();
 	SDL_Surface* screen;
 
-	static const int SCREEN_HEIGHT = 480;
-	static const int SCREEN_WIDTH = 640;
+	static const int SCREEN_HEIGHT = 600;
+	static const int SCREEN_WIDTH = 800;
 	static const int SCREEN_BPP = 32;
     };
 

@@ -9,18 +9,20 @@ using namespace GameEng;
 namespace Game{
     class Square : public Sprite {
 	public:
+	    //Initializes the variables
+	    Square(int x, int y, int w, int h);
+
+	    const SDL_Rect& getRect() const;
+
 	    void draw() const;
 
 	    void tick(){};
-
-	    //Initializes the variables
-	    Square(int x, int y, int w, int h);
 
 	private:
 	    int w;
 	    int h;
 
-	    SDL_Rect* rect;
+	    SDL_Rect rect; 
     };
 }
 #endif

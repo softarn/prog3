@@ -3,15 +3,19 @@
 
 namespace Game{
     Square::Square(int xx, int yy, int ww, int hh) : 
-	Sprite(NULL, xx, yy), w(ww), h(hh){
-	    rect->x = x;
-	    rect->y = y;
-	    rect->w = w;
-	    rect->h = h;
+	Sprite("dot.bmp", xx, yy), w(ww), h(hh){
+	    rect.x = x;
+	    rect.y = y;
+	    rect.w = w;
+	    rect.h = h;
 	}
 
+    const SDL_Rect& Square::getRect() const{
+	return rect;
+    }
+
     void Square::draw() const{
-	SDL_FillRect( sys.screen, rect, SDL_MapRGB( sys.screen->format, 0x77, 0x77, 0x77 ) );
+	SDL_Rect* tmpRect = new SDL_Rect(rect);
+	SDL_FillRect( sys.screen, tmpRect, SDL_MapRGB( sys.screen->format, 0x77, 0x77, 0x77 ) );
     }
 }
-    

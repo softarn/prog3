@@ -1,12 +1,13 @@
 #ifndef SPRITEINPUT_H
 #define SPRITEINPUT_H
-
+#include <vector>
 #include "Sprite.h"
 
 namespace GameEng{
     class SpriteInput : public Sprite{
 	public:
 	    virtual void handle_input(SDL_Event& event) = 0;
+	    virtual void collision(std::vector<Sprite*>) = 0;
 	    void draw() const = 0;
 	    void tick() = 0;
 	protected:

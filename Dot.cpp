@@ -1,12 +1,12 @@
 #include "Dot.h"
 #include "Globals.h"
-#include <iostream>
+#include "Square.h"
 
-//Mycket ifrån lazyfoo!
+//Mycket ifrån lazyfoo, needar fix!
 
 namespace Game{
     Dot::Dot(int x, int y) : SpriteInput("dot.bmp", x, y), FRICTION(0.9999f),
-	GRAVITY(0.2f){}
+    GRAVITY(0.2f){}
 
     void Dot::draw() const{
 
@@ -20,7 +20,12 @@ namespace Game{
     }
 
     void Dot::tick(){
-	
+
+	int dotBottom = y + DOT_HEIGHT;
+	int dotTop = y;
+	int dotRight = x + DOT_WIDTH;
+	int dotLeft = x;
+
 	//Get the keystates
 	Uint8 *keystates = SDL_GetKeyState( NULL );
 
@@ -40,46 +45,49 @@ namespace Game{
 
 	gravity();
 	friction();
-	
-	//Move the dot left or right
+
+	//Move dot
 	x += xVel;
 
-	//If the dot went too far to the left
-	if( x < 0 )
-	{
-		//Move back
-		x = 0;
-		xVel = -(xVel * 0.70f);
-	}
-	//or the right
-	else if( x + DOT_WIDTH > sys.SCREEN_WIDTH )
-	{
-		//Move back
-		x = sys.SCREEN_WIDTH - DOT_WIDTH;
-		xVel = -(xVel * 0.70f);
+	//Make sure the dot is not outside the screen
+	//to the left
+	if( x < 0 ){
+	    x = 0;
+	    xVel = -xVel;
+
+	    //Add some boost for hitting wall
+	    yVel -= 2;
 	}
 
-	//Move the dot up or down
+	//Make sure the dot is not outside the screen
+	//to the right
+	else if( dotRight > sys.SCREEN_WIDTH ){
+	    x = sys.SCREEN_WIDTH - DOT_WIDTH;
+	    xVel = -xVel;
+
+	    //Add some boost for hitting wall
+	    yVel -= 2;
+	}
+
+	//Move dot
 	y += yVel;
 
-	//If the dot went too far up
-	if( y < 0 )
-	{
-		//Move back
-		y = 0;
-		yVel = -yVel;
-	}
-	//or down
-	else if( y + DOT_HEIGHT > sys.SCREEN_HEIGHT )
-	{
-		//Move back
-		y = sys.SCREEN_HEIGHT - DOT_HEIGHT;
+	//Make sure the dot is not outside the screen
+	//to the top
+	if( dotTop < 0 ){
+	    y = 0;
+	    yVel = -yVel;
 
-		if(yVel > 0)
-			yVel = -(yVel - 4);
+	}
+	//Make sure the dot is not outside the screen
+	//or bottom
+	else if( dotBottom > sys.SCREEN_HEIGHT ){
+	    y = sys.SCREEN_HEIGHT - DOT_HEIGHT;
+	    if(yVel > 0)
+		yVel = -(yVel - 4);
 	}
     }
-    
+
     void Dot::handle_input(SDL_Event& event)
     {
 	//If a key was pressed
@@ -114,5 +122,45 @@ namespace Game{
     void Dot::friction()
     {
 	yVel *= FRICTION;
+    }
+
+    bool Dot::collided(SDL_Rect target) const {
+	int rightT = target.x + target.w;
+	int leftT = target.x;
+	int topT = target.y;
+	int bottomT = target.y + target.h;
+
+	if(rightT < x){
+	    return false;
+	}
+
+	if(leftT > x + DOT_WIDTH){
+	    return false;
+	}
+
+	if(topT > y + DOT_HEIGHT){
+	    return false;
+	}
+
+	if(bottomT + DOT_HEIGHT/2 < y){
+	    return false;
+	}
+	return true;
+    }
+
+    void Dot::collision(std::vector<Sprite*> comps){
+	for(unsigned int i=0; i < comps.size(); i++) {
+	    Square *square = dynamic_cast<Square*>(comps[i]);
+	    if(square){
+		if(collided(square->getRect())){
+    		    if(yVel > 0){
+			yVel = -yVel;
+		    }
+		    if(yVel > -8){
+			yVel = -8;
+		    }
+		}
+	    }
+	}
     }
 }

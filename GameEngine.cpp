@@ -5,6 +5,7 @@
 #include "SpriteInput.h"
 #include "GameEngine.h"
 #include "Globals.h"
+
 namespace GameEng {
 
     GameEngine::~GameEngine(){
@@ -42,8 +43,10 @@ namespace GameEng {
 
 	    for(unsigned int i=0; i < comps.size(); i++) {
 		comps[i]->tick();
+		SpriteInput *si = dynamic_cast<SpriteInput*>(comps[i]);
+		if(si)
+		    si->collision(comps);
 	    }
-
 
 	    //Fill the screen white
 	    SDL_FillRect( sys.screen, &sys.screen->clip_rect, SDL_MapRGB( sys.screen->format, 0xFF, 0xFF, 0xFF ) );
