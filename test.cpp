@@ -17,8 +17,8 @@ int main( int argc, char* args[] )
 {
     GameEngine ge(FRAMES_PER_SECOND);
 
-    Dot *dot = new Dot(100, 50, SDLK_LEFT, SDLK_RIGHT);
-    Dot *dot2 = new Dot(400, 50, SDLK_a, SDLK_d);
+    Dot *dot = new Dot(100, 50, SDLK_LEFT, SDLK_RIGHT, "dot.bmp");
+    Dot *dot2 = new Dot(400, 50, SDLK_a, SDLK_d, "dot_blue.bmp");
     Square *platform = new Square(10, 500, 100, 10);
     Square *platform1 = new Square(190, 500, 100, 10);
     Square *platform2 = new Square(490, 500, 100, 10);

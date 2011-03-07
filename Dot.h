@@ -9,7 +9,7 @@ namespace Game {
     class Dot : public SpriteInput{
 	public:
 	    //Initializes the variables
-	    Dot(int x, int y, SDLKey l, SDLKey r);
+	    Dot(int x, int y, SDLKey l, SDLKey r, std::string dotname);
 
 	    //Not used
 	    void handle_input(SDL_Event& event);

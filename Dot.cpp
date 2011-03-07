@@ -4,7 +4,7 @@
 
 
 namespace Game{
-    Dot::Dot(int x, int y, SDLKey l, SDLKey r) : SpriteInput("dot.bmp", x, y), FRICTION(0.9999f),
+    Dot::Dot(int x, int y, SDLKey l, SDLKey r, std::string dotname) : SpriteInput(dotname, x, y), FRICTION(0.9999f),
     GRAVITY(0.2f), leftKey(l), rightKey(r){}
 
     void Dot::draw() const{
