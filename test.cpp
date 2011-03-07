@@ -2,6 +2,7 @@
 #include "GameEngine.h"
 #include "Dot.h"
 #include "Square.h"
+#include <iostream>
 
 //using namespace std;
 using namespace GameEng;
@@ -17,8 +18,8 @@ int main( int argc, char* args[] )
 {
     GameEngine ge(FRAMES_PER_SECOND);
 
-    Dot *dot = new Dot(100, 50, SDLK_LEFT, SDLK_RIGHT, "dot.bmp");
-    Dot *dot2 = new Dot(400, 50, SDLK_a, SDLK_d, "dot_blue.bmp");
+    Dot *dot = new Dot(100, 50, SDLK_LEFT, SDLK_RIGHT, "dot.bmp", 1, "Player one");
+    Dot *dot2 = new Dot(400, 50, SDLK_a, SDLK_d, "dot_blue.bmp", 2, "Player two");
     Square *platform = new Square(10, 500, 100, 10);
     Square *platform1 = new Square(190, 500, 100, 10);
     Square *platform2 = new Square(490, 500, 100, 10);

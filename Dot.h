@@ -9,7 +9,7 @@ namespace Game {
     class Dot : public SpriteInput{
 	public:
 	    //Initializes the variables
-	    Dot(int x, int y, SDLKey l, SDLKey r, std::string dotname);
+	    Dot(int x, int y, SDLKey l, SDLKey r, std::string dotname, int player, std::string playerName);
 
 	    //Not used
 	    void handle_input(SDL_Event& event);
@@ -39,6 +39,8 @@ namespace Game {
 
 	    float GRAVITY;
 	    float FRICTION;
+	    std::string player_name;
+	    int player_number;
 
 	    SDLKey leftKey, rightKey;
     };

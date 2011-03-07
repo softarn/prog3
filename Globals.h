@@ -16,6 +16,10 @@ namespace GameEng {
 	static const int SCREEN_BPP = 32;
 
 	bool run;
+	int loosing_player_number;
+	std::string player1;
+	std::string player2;
+
 	std::string endingMessage;
     };
 

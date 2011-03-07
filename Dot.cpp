@@ -4,8 +4,14 @@
 
 
 namespace Game{
-    Dot::Dot(int x, int y, SDLKey l, SDLKey r, std::string dotname) : SpriteInput(dotname, x, y), FRICTION(0.9999f),
-    GRAVITY(0.2f), leftKey(l), rightKey(r){}
+    Dot::Dot(int x, int y, SDLKey l, SDLKey r, std::string dotname, int player, std::string playerName) : SpriteInput(dotname, x, y), FRICTION(0.9999f), player_number(player), player_name(playerName),
+    GRAVITY(0.2f), leftKey(l), rightKey(r){
+	    if(player_number == 1)
+	    	sys.player1 = player_name;
+	    else
+	    	sys.player2 = player_name;
+
+    }
 
     void Dot::draw() const{
 
@@ -83,6 +89,7 @@ namespace Game{
 	
 	else if( dotBottom > sys.SCREEN_HEIGHT ){
 	    sys.run = false;
+	    sys.loosing_player_number = player_number;
 	}
     }
 
