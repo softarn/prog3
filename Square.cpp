@@ -18,7 +18,7 @@ namespace Game{
 
     void Square::draw() const{
 	SDL_Rect* tmpRect = new SDL_Rect(rect);
-	SDL_FillRect( sys.screen, tmpRect, SDL_MapRGB( sys.screen->format, 0x77, 0x77, 0x77 ) );
+	SDL_FillRect( sys.screen, tmpRect, SDL_MapRGB( sys.screen->format, 0x95, 0x48, 0x08 ) );
     }
 
     void Square::randomizePos(){

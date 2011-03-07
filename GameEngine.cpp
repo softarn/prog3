@@ -43,8 +43,8 @@ namespace GameEng {
 		    si->collision(comps);
 	    }
 
-	    //Fill the screen white
-	    SDL_FillRect( sys.screen, &sys.screen->clip_rect, SDL_MapRGB( sys.screen->format, 0xFF, 0xFF, 0xFF ) );
+	    //Fill the screen 
+	    SDL_FillRect( sys.screen, &sys.screen->clip_rect, SDL_MapRGB( sys.screen->format, 0xF4, 0x93, 0x43 ) );
 
 	    for(unsigned int i=0; i < comps.size(); i++) {
 		comps[i]->draw();
