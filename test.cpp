@@ -19,10 +19,7 @@ int main( int argc, char* args[] )
 	std::string player_one_name = "Player One";
 	std::string player_two_name = "Player Two";
 
-	 std::cout << "argc = " << argc << std::endl;
-	   for(int i = 0; i < argc; i++)
-		   std::cout << "args[" << i << "] = " << args[i] << std::endl;
-
+	// TODO: DAMN, is it supposed to be this fucked up to compare two effin strings?
 	   for(int i = 0; i < argc; i++) {
 		   bool p1equal = (strcmp(args[i], "-p1name") == 0);
 		   if(p1equal) {
