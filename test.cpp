@@ -2,7 +2,6 @@
 #include "GameEngine.h"
 #include "Dot.h"
 #include "Square.h"
-#include <iostream>
 
 //using namespace std;
 using namespace GameEng;
@@ -18,6 +17,7 @@ int main( int argc, char* args[] )
 {
 	std::string player_one_name = "Player One";
 	std::string player_two_name = "Player Two";
+	int number_of_players = 0;
 
 	// TODO: DAMN, is it supposed to be this fucked up to compare two effin strings?
 	   for(int i = 0; i < argc; i++) {
@@ -28,6 +28,11 @@ int main( int argc, char* args[] )
 		   bool p2equal = (strcmp(args[i], "-p2name") == 0);
 		   if(p2equal) {
 			   player_two_name = std::string(args[++i]);
+		   }
+
+		   bool npequal = (strcmp(args[i], "-nplayers") == 0);
+		   if(npequal) {
+			   number_of_players = atoi(args[++i]);
 		   }
 
 	   }
@@ -45,8 +50,13 @@ int main( int argc, char* args[] )
     ge.add(platform2);
     ge.add(platform3);
     ge.add(platform);
-    ge.add(dot2);
-    ge.add(dot);
+
+    if(number_of_players == 1)
+        ge.add(dot);
+    else {
+        ge.add(dot2);
+        ge.add(dot);
+    }
     ge.run();
 
     //Clean up
