@@ -60,8 +60,6 @@ namespace Game{
 	    x = 0;
 	    xVel = -xVel;
 
-	    //Add some boost for hitting wall
-	    yVel -= 2;
 	}
 
 	//Make sure the dot is not outside the screen
@@ -70,8 +68,6 @@ namespace Game{
 	    x = sys.SCREEN_WIDTH - DOT_WIDTH;
 	    xVel = -xVel;
 
-	    //Add some boost for hitting wall
-	    yVel -= 2;
 	}
 
 	//Move dot
