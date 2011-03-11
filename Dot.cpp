@@ -35,15 +35,13 @@ namespace Game{
 	Uint8 *keystates = SDL_GetKeyState( NULL );
 
 	//If left is pressed
-	if( keystates[ leftKey ] && xVel > -200 )
-	{
+	if( keystates[leftKey] && xVel > -200 ){
 	    if(xVel > -DOT_ACC_X_MAX)
 		xVel -= DOT_ACC_X;
 	}
 
 	//If right is pressed
-	if( keystates[ rightKey ] && xVel < 200)
-	{
+	if( keystates[rightKey] && xVel < 200){
 	    if(xVel < DOT_ACC_X_MAX)
 		xVel += DOT_ACC_X;
 	}
@@ -89,8 +87,7 @@ namespace Game{
 	}
     }
 
-    void Dot::handle_input(SDL_Event& event)
-    {
+    void Dot::handle_input(SDL_Event& event){
 /*	//If a key was pressed
 	if( event.type == SDL_KEYDOWN )
 	{
@@ -115,13 +112,11 @@ namespace Game{
 */
     }
 
-    void Dot::gravity()
-    {
+    void Dot::gravity(){
 	yVel += GRAVITY;
     }
 
-    void Dot::friction()
-    {
+    void Dot::friction(){
 	yVel *= FRICTION;
     }
 
