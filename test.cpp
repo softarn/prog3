@@ -2,6 +2,7 @@
 #include "GameEngine.h"
 #include "Dot.h"
 #include "Square.h"
+#include "MovingSquare.h"
 
 //using namespace std;
 using namespace GameEng;
@@ -45,11 +46,14 @@ int main( int argc, char* args[] )
     Square *platform1 = new Square(190, 500, 100, 10);
     Square *platform2 = new Square(490, 500, 100, 10);
     Square *platform3 = new Square(300, 500, 100, 10);
+    MovingSquare *square = new MovingSquare(0, sys.SCREEN_HEIGHT - 15, 50, 10);
+
 
     ge.add(platform1);
     ge.add(platform2);
     ge.add(platform3);
     ge.add(platform);
+    ge.add(square);
 
     if(number_of_players == 1)
         ge.add(dot);

@@ -18,13 +18,14 @@ namespace Game{
 
 	    void tick(){};
 
-	    void randomizePos();
+	    virtual void randomizePos();
+
+	    SDL_Rect rect;
 
 	private:
 	    int w;
 	    int h;
 
-	    SDL_Rect rect; 
     };
 }
 #endif
