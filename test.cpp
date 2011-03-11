@@ -40,12 +40,12 @@ int main( int argc, char* args[] )
 
     GameEngine ge(FRAMES_PER_SECOND);
 
-    Dot *dot = new Dot(100, 50, SDLK_LEFT, SDLK_RIGHT, "dot.bmp", 1, player_one_name);
-    Dot *dot2 = new Dot(400, 50, SDLK_a, SDLK_d, "dot_blue.bmp", 2, player_two_name);
-    Square *platform = new Square(10, 500, 100, 10);
-    Square *platform1 = new Square(190, 500, 100, 10);
-    Square *platform2 = new Square(490, 500, 100, 10);
-    Square *platform3 = new Square(300, 500, 100, 10);
+    Dot *dot = new Dot((sys.SCREEN_WIDTH / 4) * 1, 50, SDLK_LEFT, SDLK_RIGHT, "dot.bmp", 1, player_one_name);
+    Dot *dot2 = new Dot((sys.SCREEN_WIDTH / 4) * 3, 50, SDLK_a, SDLK_d, "dot_blue.bmp", 2, player_two_name);
+    Square *platform = new Square((sys.SCREEN_WIDTH / 4) * 1, 500, 100, 10);
+    Square *platform1 = new Square((sys.SCREEN_WIDTH / 4) * 3, 500, 100, 10);
+    Square *platform2 = new Square(0, 400, 100, 10);
+    Square *platform3 = new Square(450, 450, 100, 10);
     MovingSquare *square = new MovingSquare(0, sys.SCREEN_HEIGHT - 15, 50, 10);
 
 
