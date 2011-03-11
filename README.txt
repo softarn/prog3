@@ -20,4 +20,4 @@ Timer.*
 
 Alla filer ligger i root mappen.
 
-För att slippa skriva själv: g++ Image.cpp Sprite.cpp GameEngine.cpp Timer.cpp Globals.cpp Dot.cpp Square.cpp test.cpp -lSDL -lSDL_image -o run
+För att slippa skriva själv: g++ Image.cpp Sprite.cpp GameEngine.cpp Timer.cpp Globals.cpp Dot.cpp Square.cpp BallsOfSteel.cpp GameGlobals.cpp -lSDL -lSDL_image -o run
