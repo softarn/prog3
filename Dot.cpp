@@ -1,15 +1,16 @@
 #include "Dot.h"
-#include "Globals.h"
 #include "Square.h"
+#include "Globals.h"
+#include "GameGlobals.h"
 
 
 namespace Game{
     Dot::Dot(int x, int y, SDLKey l, SDLKey r, std::string dotname, int player, std::string playerName) : SpriteInput(dotname, x, y), FRICTION(0.9999f), player_number(player), player_name(playerName),
     GRAVITY(0.2f), leftKey(l), rightKey(r){
 	    if(player_number == 1)
-	    	sys.player1 = player_name;
+	    	gamedata.player1 = player_name;
 	    else
-	    	sys.player2 = player_name;
+	    	gamedata.player2 = player_name;
 
     }
 
@@ -83,7 +84,7 @@ namespace Game{
 	
 	else if( dotBottom > sys.SCREEN_HEIGHT ){
 	    sys.run = false;
-	    sys.loosing_player_number = player_number;
+	    gamedata.loosing_player_number = player_number;
 	}
     }
 

@@ -5,7 +5,7 @@ namespace GameEng {
     
     Globals sys;
 
-    Globals::Globals() : run(true), endingMessage("Player that won the game: "){
+    Globals::Globals() : run(true){
 	
 	if (SDL_Init(SDL_INIT_EVERYTHING) != -1){
 		screen = SDL_SetVideoMode( SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_BPP, SDL_SWSURFACE );
