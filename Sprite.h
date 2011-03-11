@@ -12,13 +12,14 @@ namespace GameEng {
 	    virtual void tick() = 0;
 	    const Image& getImage() const;
 	    
+
+	protected:
+	    Sprite(std::string path, int xx, int yy);
+
 	    int x;
 	    int y;
 	    float xVel;
 	    float yVel;
-
-	protected:
-	    Sprite(std::string path, int xx, int yy);
 
 	private:
 	    Sprite(const Sprite& source);
