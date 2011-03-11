@@ -59,10 +59,6 @@ namespace GameEng {
 		SDL_Delay( ( 1000 / FRAMES_PER_SECOND ) - timer.get_ticks());
 	    }
 	}
-	if(sys.loosing_player_number == 1)
-		std::cout << sys.endingMessage << sys.player2 << std::endl;
-	else
-		std::cout << sys.endingMessage << sys.player1 << std::endl;
     }
 
     void GameEngine::add(Sprite* spr){

@@ -3,6 +3,8 @@
 #include "Dot.h"
 #include "Square.h"
 #include "MovingSquare.h"
+#include <iostream>
+#include "GameGlobals.h"
 
 //using namespace std;
 using namespace GameEng;
@@ -64,6 +66,11 @@ int main( int argc, char* args[] )
         ge.add(dot);
     }
     ge.run();
+
+	if(gamedata.loosing_player_number == 1)
+		std::cout << gamedata.endingMessage << gamedata.player2 << std::endl;
+	else
+		std::cout << gamedata.endingMessage << gamedata.player1 << std::endl;
 
     //Clean up
     return 0;
