@@ -10,6 +10,7 @@ Filer i namespacet Game tillhör spelet:
 Dot.*
 Square.*
 MovingSquare.*
+GameGlobals.*
 
 Filer i namespacet GameEng tillhör spelmotorn:
 GameEngine.*
