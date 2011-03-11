@@ -18,8 +18,8 @@ SDL_Event event;
 
 int main( int argc, char* args[] )
 {
-	std::string player_one_name = "Player One";
-	std::string player_two_name = "Player Two";
+	std::string player_one_name = "Black";
+	std::string player_two_name = "Blue";
 	int number_of_players = 0;
 
 	// TODO: DAMN, is it supposed to be this fucked up to compare two effin strings?
@@ -42,8 +42,8 @@ int main( int argc, char* args[] )
 
     GameEngine ge(FRAMES_PER_SECOND);
 
-    Dot *dot = new Dot((sys.SCREEN_WIDTH / 4) * 1, 50, SDLK_LEFT, SDLK_RIGHT, "dot.bmp", 1, player_one_name);
-    Dot *dot2 = new Dot((sys.SCREEN_WIDTH / 4) * 3, 50, SDLK_a, SDLK_d, "dot_blue.bmp", 2, player_two_name);
+    Dot *dot = new Dot((sys.SCREEN_WIDTH / 4) * 1, 50, SDLK_a, SDLK_d, "dot_blue.bmp", 2, player_two_name);
+    Dot *dot2 = new Dot((sys.SCREEN_WIDTH / 4) * 3, 50, SDLK_LEFT, SDLK_RIGHT, "dot.bmp", 1, player_one_name);
     Square *platform = new Square((sys.SCREEN_WIDTH / 4) * 1, 500, 100, 10);
     Square *platform1 = new Square((sys.SCREEN_WIDTH / 4) * 3, 500, 100, 10);
     Square *platform2 = new Square((sys.SCREEN_WIDTH / 10) * 2, 600, 100, 10);
